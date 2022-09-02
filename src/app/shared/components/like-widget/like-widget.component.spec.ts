@@ -24,20 +24,20 @@ describe(LikeWidgetComponent.name,()=>{
     component=fixture.componentInstance
   });
 
-  it('Should create component',()=>
+  it('Deve criar componente',()=>
   {
 
     expect(component).toBeTruthy();
   });
 
-  it('Should auto generate Id when id input property is missing',()=>
+  it('Deve gerar ID automaticamente durante NgOnInit quando {@Input id} não for atribuído',()=>
   {
 
     fixture.detectChanges();
     expect(component.id).toBeTruthy();
   });
 
-  it('Should NOT generate Id when id input property is present',()=>{
+  it('Não deve gerar ID automaticamente durante ngOnInit quando {@Input id} não estiver atribuído',()=>{
 
     const someId='someId';
     component.id=someId
@@ -45,14 +45,15 @@ describe(LikeWidgetComponent.name,()=>{
     expect(component.id).toBeTruthy();
   });
 
-  it(`#${LikeWidgetComponent.prototype.like.name} should trigger emission when called`,done=>
+  //TESTA O LIKE
+  it(`#${LikeWidgetComponent.prototype.like.name} deve acionar (@Output like} quando chamado`,()=>
   {
+    spyOn(component.liked,'emit');//ESPIONA O METODO EMIT
     fixture.detectChanges();
-    component.liked.subscribe(()=>{
-      expect(true).toBeTrue();
-      done();
-    });
     component.like();
+    //CHAMOU O METOOD AGORA,E TO PERGUTNA SE O METODO FOI CHAMADO OU NÃO
+    expect(component.liked.emit).toHaveBeenCalled();
+
   });
 
 
