@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<testsuite name="Chrome Headless 105.0.5195.53 (Windows 10)" package="" timestamp="2022-09-02T11:32:32" id="0" hostname="DESKTOP-EJFUUCB" tests="8" errors="0" failures="0" time="0.05">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/105.0.5195.53 Safari/537.36"/>
+  </properties>
+  <testcase name="LikeWidgetComponent Deve criar componente" time="0.032" classname="Chrome_Headless_105_0_5195_53_(Windows_10).LikeWidgetComponent"/>
+  <testcase name="LikeWidgetComponent Não deve gerar ID automaticamente durante ngOnInit quando {@Input id} não estiver atribuído" time="0.007" classname="Chrome_Headless_105_0_5195_53_(Windows_10).LikeWidgetComponent"/>
+  <testcase name="LikeWidgetComponent Deve gerar ID automaticamente durante NgOnInit quando {@Input id} não for atribuído" time="0.004" classname="Chrome_Headless_105_0_5195_53_(Windows_10).LikeWidgetComponent"/>
+  <testcase name="LikeWidgetComponent #like deve acionar (@Output like} quando chamado" time="0.005" classname="Chrome_Headless_105_0_5195_53_(Windows_10).LikeWidgetComponent"/>
+  <testcase name="UniqueIdService #generatedUniqueIdWithPrefix should  not generate id when called multiple times" time="0.001" classname="Chrome_Headless_105_0_5195_53_(Windows_10).UniqueIdService"/>
+  <testcase name="UniqueIdService #generatedUniqueIdWithPrefix deve puxar quando for chamado vazio " time="0" classname="Chrome_Headless_105_0_5195_53_(Windows_10).UniqueIdService"/>
+  <testcase name="UniqueIdService #generatedUniqueIdWithPrefix should generate id when called with prefix" time="0.001" classname="Chrome_Headless_105_0_5195_53_(Windows_10).UniqueIdService"/>
+  <testcase name="UniqueIdService #getNumberOfGeneratedUniqueIds deve retornar o número de Ids gerados quando chamado" time="0" classname="Chrome_Headless_105_0_5195_53_(Windows_10).UniqueIdService"/>
+  <system-out>
+    <![CDATA[
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>
