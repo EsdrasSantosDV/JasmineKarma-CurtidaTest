@@ -6,6 +6,7 @@ describe(LikeWidgetComponent.name,()=>{
 
   //ELE NÃO E UMA INSTANCIA DO LIKJE
   let fixture:ComponentFixture<LikeWidgetComponent>=null;
+  let component:LikeWidgetComponent=null;
 
   beforeEach(async ()=>
   {
@@ -16,17 +17,42 @@ describe(LikeWidgetComponent.name,()=>{
       declarations:[LikeWidgetComponent],
       //COMO TEM O UNIQUE SERVICE
       providers:[UniqueIdService],
-      imports:[FontAwesomeModule]
+      imports:[FontAwesomeModule],
     }).compileComponents();
 
     fixture=TestBed.createComponent(LikeWidgetComponent);
-
+    component=fixture.componentInstance
   });
 
   it('Should create component',()=>
   {
-    const instance=fixture.componentInstance;
-    expect(instance).toBeTruthy();
+
+    expect(component).toBeTruthy();
+  });
+
+  it('Should auto generate Id when id input property is missing',()=>
+  {
+
+    fixture.detectChanges();
+    expect(component.id).toBeTruthy();
+  });
+
+  it('Should NOT generate Id when id input property is present',()=>{
+
+    const someId='someId';
+    component.id=someId
+    fixture.detectChanges();
+    expect(component.id).toBeTruthy();
+  });
+
+  it(`#${LikeWidgetComponent.prototype.like.name} should trigger emission when called`,done=>
+  {
+    fixture.detectChanges();
+    component.liked.subscribe(()=>{
+      expect(true).toBeTrue();
+      done();
+    });
+    component.like();
   });
 
 
