@@ -26,3 +26,5 @@ export class LikeWidgetComponent implements OnInit {
     this.liked.emit();
   }
 }
+
+
